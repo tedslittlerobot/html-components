@@ -1,0 +1,20 @@
+{
+    "name": "tlr/html-component",
+    "description": "",
+    "authors": [
+        {
+            "name": "Stef Horner",
+            "email": "stef@tedslittlerobot.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Tlr\\HtmlComponent": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
