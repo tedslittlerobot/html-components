@@ -63,6 +63,15 @@ class HtmlComponentFormatter {
 		return "<label>{$radio}$label</label>";
 	}
 
+	/**
+	 * Generate an HTML link tag
+	 * @param  string $content
+	 * @param  string $href
+	 * @param  array  $attributes
+	 * @param  array  $options
+	 * @return string
+	 */
+	public function link($content = '', $href = null, $attributes = array(), $options = array())
 	{
 		if (!is_null($href))
 		{
@@ -72,6 +81,13 @@ class HtmlComponentFormatter {
 		return $this->element('a', $attributes, $content);
 	}
 
+	/**
+	 * Generate an HTML element
+	 * @param  string $element
+	 * @param  array  $attributes
+	 * @param  string $content
+	 * @return string
+	 */
 	public function element( $element = 'div', $attributes = array(), $content = null )
 	{
 		foreach ($attributes as $attribute => $values)
@@ -89,7 +105,12 @@ class HtmlComponentFormatter {
 		return $html;
 	}
 
-	public function attributeString( $attributes )
+	/**
+	 * Compile a multidimentional attribute string
+	 * @param  array $attributes
+	 * @return string
+	 */
+	public function attributeString( array $attributes )
 	{
 		$parsed = array();
 
