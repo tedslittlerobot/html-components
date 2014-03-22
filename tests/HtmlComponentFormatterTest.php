@@ -24,6 +24,12 @@ class HtmlComponentFormatterTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('<a>bar</a>', $this->formatter->link('bar', null));
 	}
 
+	public function testOpenForm()
+	{
+		$this->assertEquals('<form action="foo" method="BAR">', $this->formatter->openForm('foo', 'bar'));
+		$this->assertEquals('<form enctype="multipart/form-data">', $this->formatter->openForm(null, null, true));
+	}
+
 	public function testCloseForm()
 	{
 		$this->assertEquals('</form>', $this->formatter->closeForm());

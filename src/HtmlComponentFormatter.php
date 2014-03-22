@@ -2,6 +2,24 @@
 
 class HtmlComponentFormatter {
 
+	public function openForm( $target = null, $method = 'post', $data = false, $attributes = array(), $options = array() )
+	{
+		if ( !is_null($target) )
+		{
+			$attributes['action'] = $target;
+		}
+		if ( !is_null($method) )
+		{
+			$attributes['method'] = strtoupper($method);
+		}
+		if ($data)
+		{
+			$attributes['enctype'] = 'multipart/form-data';
+		}
+
+		return $this->element('form', $attributes);
+	}
+
 	public function closeForm()
 	{
 		return '</form>';
