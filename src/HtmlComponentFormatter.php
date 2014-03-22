@@ -121,4 +121,15 @@ class HtmlComponentFormatter {
 
 		return ( empty( $parsed ) ? '' : ' ' ) . implode(' ', $parsed);
 	}
+
+	public function macro( $key, $function )
+	{
+		if (!is_callable($function))
+		{
+			throw new \InvalidArgumentsException("Argument 2 must be callable");
+		}
+
+		$this->macros[$key] = $function;
+	}
+
 }
