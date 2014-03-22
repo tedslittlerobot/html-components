@@ -12,8 +12,8 @@
         "illuminate/support": "4.1.*"
     },
     "autoload": {
-        "psr-0": {
-            "Tlr\\HtmlComponent": "src/"
+        "psr-4": {
+            "Tlr\\Components\\": "src/"
         }
     },
     "minimum-stability": "stable"
