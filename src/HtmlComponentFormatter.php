@@ -25,7 +25,44 @@ class HtmlComponentFormatter {
 		return '</form>';
 	}
 
-	public function link($content, $href, $attributes = array(), $options = array())
+	public function checkbox( $name = null, $label = null, $value = null, $attributes = array(), $options = array() )
+	{
+		$attributes['type'] = 'checkbox';
+
+		if (!is_null($name))
+		{
+			$attributes['name'] = $name;
+		}
+
+		if (!is_null($value))
+		{
+			$attributes['value'] = $value;
+		}
+
+		$checkbox = $this->element('input', $attributes);
+
+		return "<label>{$checkbox}$label</label>";
+	}
+
+	public function radio( $name = null, $label = null, $value = null, $attributes = array(), $options = array() )
+	{
+		$attributes['type'] = 'radio';
+
+		if (!is_null($name))
+		{
+			$attributes['name'] = $name;
+		}
+
+		if (!is_null($value))
+		{
+			$attributes['value'] = $value;
+		}
+
+		$radio = $this->element('input', $attributes);
+
+		return "<label>{$radio}$label</label>";
+	}
+
 	{
 		if (!is_null($href))
 		{

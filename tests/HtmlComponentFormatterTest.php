@@ -35,4 +35,14 @@ class HtmlComponentFormatterTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('</form>', $this->formatter->closeForm());
 	}
 
+	public function testCheckbox()
+	{
+		$this->assertEquals('<label><input type="checkbox" name="foo" value="baz">bar</label>', $this->formatter->checkbox('foo', 'bar', 'baz'));
+	}
+
+	public function testRadio()
+	{
+		$this->assertEquals('<label><input type="radio" name="foo" value="baz">bar</label>', $this->formatter->radio('foo', 'bar', 'baz'));
+	}
+
 }
